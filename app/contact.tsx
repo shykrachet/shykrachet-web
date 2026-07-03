@@ -8,7 +8,8 @@ export default function ContactPage() {
                 <Header />
 
                 <main className="p-8">
-                    <h1 className="text-2xl font-bold">test</h1>
+                    <h1 className="text-2xl font-bold">Contact Me</h1>
+                    <p>Email: godjikung.2547@gmail.com</p>
                 </main>
             </div>
         </div>

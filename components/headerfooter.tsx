@@ -13,7 +13,7 @@ export function Header() {
       <nav className="flex gap-6 text-xs tracking-widest uppercase text-neutral-400">
         <Link href="/" className="hover:text-white transition-colors">Home</Link>
         <Link href="/#about" className="hover:text-white transition-colors">About</Link>
-        <Link href="/#projects" className="hover:text-white transition-colors">Work</Link>
+        <Link href="/#timeline" className="hover:text-white transition-colors">Timeline</Link>
         <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>
       </nav>
     </header>
