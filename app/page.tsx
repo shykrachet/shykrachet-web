@@ -9,22 +9,33 @@ const PROJECTS = [
   {
     id: 1,
     title: "Syndicate",
-    description: "มาเป็นเด็กฝึกงานที่ Syndicate ในตำแหน่ง Frontend Developer และได้ทำงานร่วมกับทีมพัฒนาเว็บไซต์และแอปพลิเคชันของบริษัท",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-    link: "#",
+    year: "2026",
+    description: "Frontend Developer Intern at Syndicate. Collaborated with the development team to build and maintain websites and applications for the company.",
+    tags: ["Next.js", "TailwindCSS", "TypeScript"],
+    link: "https://github.com/Guru-Thailand",
   },
   {
     id: 2,
-    title: "Midjourney & ChatGPT Prompt Assistant",
-    description: "เครื่องมือช่วยเขียน Prompt สำหรับ Midjourney และ ChatGPT (เวอร์ชัน 1)",
-    tags: ["React", "OpenAI API", "Tailwind CSS"],
-    link: "#",
+    title: "osu.vocoid.xyz",
+    year: "2025",
+    description: "Web Developer & Moderator for a private osu! server. Co-created a private server for a gaming community, responsible for web development and monitoring player activity.",
+    tags: ["Ubuntu", "MySQL", ],
+    link: "https://osu.vocoid.xyz/",
   },
   {
     id: 3,
-    title: "AI Prompt Studio Pro",
-    description: "เครื่องมือช่วยจัดการและสร้าง Prompt สำหรับ AI งานกราฟิกและคอนเทนต์",
-    tags: ["React", "OpenAI API", "Tailwind CSS"],
+    title: "WilaLab Solutions",
+    year: "2024",
+    description: "Assistant Web Designer. Assisted my brother in designing various website projects.",
+    tags: ["Html", "Css", "Javascript"],
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "Beginner Web Developer",
+    year: "2024",
+    description: "Began building web development skills under the guidance and support of my brother. Started with HTML, CSS, and JavaScript as a foundation for self-paced learning.",
+    tags: ["Html", "Css", "Javascript"],
     link: "#",
   },
 ];
@@ -51,7 +62,7 @@ export default function MinimalistPortfolio() {
             Hello! I'm Nattapoom Wilawan, a passionate beginner developer with a keen interest in web development and modern technologies. I enjoy creating user-friendly applications and continuously learning new skills to enhance my craft.
           </p>
           <div className="pt-2 flex items-center gap-4 text-sm">
-            <a href="#contact" className="px-5 py-2.5 bg-white text-black font-medium rounded hover:bg-neutral-200 transition-colors">
+            <a href="/header-and-footer/contact" className="px-5 py-2.5 bg-white text-black font-medium rounded hover:bg-neutral-200 transition-colors">
               Contact Me
             </a>
             <a href="https://github.com/haerinforever" target="_blank" rel="noreferrer" className="px-5 py-2.5 border border-neutral-800 text-neutral-300 font-medium rounded hover:border-white hover:text-white transition-colors">
@@ -102,23 +113,6 @@ export default function MinimalistPortfolio() {
             </div>
           )}
         </section>
-
-        {/* --- Contact --- */}
-        <section id="contact" className="space-y-6 pt-6 border-t border-neutral-900">
-          <h2 className="text-sm font-semibold tracking-widest uppercase text-neutral-500">
-            Get in Touch
-          </h2>
-          <p className="text-neutral-400 text-sm leading-relaxed">
-            หากสนใจร่วมงานกัน หรืออยากพูดคุยแลกเปลี่ยนเรื่องเทคโนโลยี สามารถส่งอีเมลหาผมได้โดยตรงครับ
-          </p>
-          <div>
-            <a href="mailto:your-email@example.com" className="text-lg font-medium underline underline-offset-8 decoration-neutral-700 hover:decoration-white transition-colors">
-              hello@somchai.dev
-            </a>
-          </div>
-        </section>
-
-        {/* เรียกใช้งาน Footer กลาง */}
         <Footer />
 
       </div>
