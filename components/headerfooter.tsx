@@ -12,9 +12,9 @@ export function Header() {
       </Link>
       <nav className="flex gap-6 text-xs tracking-widest uppercase text-neutral-400">
         <Link href="/" className="hover:text-white transition-colors">Home</Link>
-        <Link href="/#about" className="hover:text-white transition-colors">About</Link>
-        <Link href="/#timeline" className="hover:text-white transition-colors">Timeline</Link>
-        <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>
+        <Link href="/header-and-footer/aboutme" className="hover:text-white transition-colors">About</Link>
+        <Link href="/header-and-footer/timeline" className="hover:text-white transition-colors">Timeline</Link>
+        <Link href="/header-and-footer/contact" className="hover:text-white transition-colors">Contact</Link>
       </nav>
     </header>
   );
@@ -25,7 +25,7 @@ export function Footer() {
   return (
     <footer className="pt-12 text-xs text-neutral-600 flex justify-between items-center border-t border-neutral-900 w-full">
       <p>© {new Date().getFullYear()} Nattapoom Wilawan. All rights reserved.</p>
-      <p>Built with Next.js</p>
+      <p>Built with Next.js & Tailwindcss</p>
     </footer>
   );
 }
