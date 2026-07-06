@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className="flex items-center justify-between border-b border-neutral-800 pb-6 w-full">
       <Link href="/" className="font-bold text-sm tracking-widest uppercase hover:text-neutral-400 transition-colors">
-        shykrachet.dev
+        shykrachet.xyz
       </Link>
       <nav className="flex gap-6 text-xs tracking-widest uppercase text-neutral-400">
         <Link href="/" className="hover:text-white transition-colors">Home</Link>
