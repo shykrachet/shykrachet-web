@@ -94,7 +94,7 @@ export default function MinimalistPortfolio() {
           {hasMore && (
             <div className="pt-2">
               <Link
-                href="/timeline"
+                href="/header-and-footer/timeline/"
                 className="block w-full py-3 border border-neutral-800 hover:border-neutral-600 rounded-lg text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:text-white transition-colors duration-200 bg-neutral-950 text-center"
               >
                 Show More ({PROJECTS.length - visibleCount} More) →
