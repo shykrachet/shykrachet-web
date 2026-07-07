@@ -1,4 +1,4 @@
-import { Header } from "@/components/headerfooter";
+import { Footer, Header } from "@/components/headerfooter";
 
 export default function ContactPage() {
     return (
@@ -6,11 +6,11 @@ export default function ContactPage() {
             <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-24">
 
                 <Header />
-
                 <main className="p-8">
-                    <h1 className="text-2xl font-bold">Contact Me</h1>
-                    <p>Email: godjikung.2547@gmail.com</p>
+                    <h1 className="text-2xl font-bold">Soon</h1>
+            
                 </main>
+                <Footer />
             </div>
         </div>
     );
