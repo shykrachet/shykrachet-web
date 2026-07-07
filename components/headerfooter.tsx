@@ -20,7 +20,6 @@ export function Header() {
   );
 }
 
-// --- Component: Footer ---
 export function Footer() {
   return (
     <footer className="pt-12 text-xs text-neutral-600 flex justify-between items-center border-t border-neutral-900 w-full">

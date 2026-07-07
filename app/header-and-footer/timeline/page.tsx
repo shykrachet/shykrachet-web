@@ -1,9 +1,7 @@
 "use client";
-
 import React from "react";
-import { Header } from "@/components/headerfooter";
+import { Header, Footer } from "@/components/headerfooter";
 
-// เพิ่ม property 'year' เข้าไปในแต่ละออบเจกต์ และถอดปีออกจาก title เพื่อความสะอาดของข้อมูล
 const PROJECTS = [
   {
     id: 1,
@@ -18,7 +16,7 @@ const PROJECTS = [
     title: "osu.vocoid.xyz",
     year: "2025",
     description: "Web Developer & Moderator for a private osu! server. Co-created a private server for a gaming community, responsible for web development and monitoring player activity.",
-    tags: ["Ubuntu", "MySQL", ],
+    tags: ["Ubuntu", "MySQL"],
     link: "https://osu.vocoid.xyz/",
   },
   {
@@ -40,7 +38,6 @@ const PROJECTS = [
 ];
 
 export default function TimelinePage() {
-  // ฟังก์ชันจัดกลุ่มโปรเจกต์ตามปี และเรียงลำดับจากปีล่าสุดลงไป
   const groupedProjects = PROJECTS.reduce((acc, project) => {
     const year = project.year;
     if (!acc[year]) {
@@ -50,17 +47,12 @@ export default function TimelinePage() {
     return acc;
   }, {} as Record<string, typeof PROJECTS>);
 
-  // เรียงลำดับปีจากมากไปน้อย (ปีล่าสุดขึ้นก่อน)
   const sortedYears = Object.keys(groupedProjects).sort((a, b) => b.localeCompare(a));
 
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black antialiased">
-      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-24">
-
-        {/* --- Header / Navigation --- */}
+      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-15">
         <Header />
-
-        {/* --- Timelines Section --- */}
         <section id="projects" className="space-y-12">
           <div className="border-b border-neutral-900 pb-4">
             <h2 className="text-sm font-semibold tracking-widest uppercase text-neutral-500">
@@ -68,16 +60,13 @@ export default function TimelinePage() {
             </h2>
           </div>
 
-          {/* วนลูปตามกลุ่มปี */}
           <div className="space-y-12">
             {sortedYears.map((year) => (
               <div key={year} className="space-y-4">
-                {/* แสดงหัวข้อปี */}
                 <h3 className="text-lg font-bold text-neutral-400 tracking-wider sticky top-0 bg-black/80 backdrop-blur-sm py-2 z-10">
                   {year}
                 </h3>
                 
-                {/* วนลูปโปรเจกต์ที่อยู่ในปีนั้นๆ */}
                 <div className="space-y-6">
                   {groupedProjects[year].map((project) => (
                     <a
@@ -92,7 +81,7 @@ export default function TimelinePage() {
                           {project.title}
                         </h4>
                         <span className="text-xs text-neutral-500 tracking-wider transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                          ↗
+                      
                         </span>
                       </div>
                       <p className="text-neutral-400 text-sm mb-4 leading-relaxed">
@@ -116,11 +105,7 @@ export default function TimelinePage() {
           </div>
         </section>
 
-        {/* --- Footer --- */}
-        <footer className="pt-12 text-xs text-neutral-600 flex justify-between items-center border-t border-neutral-900">
-          <p>© {new Date().getFullYear()} Nattapoom Wilawan. All rights reserved.</p>
-          <p>Built with Next.js</p>
-        </footer>
+        <Footer />
 
       </div>
     </div>
