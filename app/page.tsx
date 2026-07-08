@@ -1,41 +1,9 @@
+// src/app/page.tsx
 import React from "react";
 import Link from "next/link";
 import { Header, Footer } from "../components/headerfooter"; 
-
-const PROJECTS = [
-  {
-    id: 1,
-    title: "Syndicate",
-    year: "2026",
-    description: "Frontend Developer Intern at Syndicate. Collaborated with the development team to build and maintain websites and applications for the company.",
-    tags: ["Next.js", "TailwindCSS", "TypeScript"],
-    link: "https://github.com/Guru-Thailand",
-  },
-  {
-    id: 2,
-    title: "osu.vocoid.xyz",
-    year: "2025",
-    description: "Web Developer & Moderator for a private osu! server. Co-created a private server for a gaming community, responsible for web development and monitoring player activity.",
-    tags: ["Ubuntu", "MySQL", ],
-    link: "https://osu.vocoid.xyz/",
-  },
-  {
-    id: 3,
-    title: "WilaLab Solutions",
-    year: "2024",
-    description: "Assistant Web Designer. Assisted my brother in designing various website projects.",
-    tags: ["Html", "Css", "Javascript"],
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Beginner Web Developer",
-    year: "2024",
-    description: "Began building web development skills under the guidance and support of my brother. Started with HTML, CSS, and JavaScript as a foundation for self-paced learning.",
-    tags: ["Html", "Css", "Javascript"],
-    link: "#",
-  },
-];
+import { PROJECTS } from "@/data/projects";
+import ProjectCard from "@/components/project";
 
 export default function MinimalistPortfolio() {
   const visibleCount = 2;
@@ -47,6 +15,7 @@ export default function MinimalistPortfolio() {
       <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-24">
 
         <Header />
+        
         <section id="about" className="space-y-6">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
             Nattapoom Wilawan <br />
@@ -56,7 +25,7 @@ export default function MinimalistPortfolio() {
             Hello! I'm Nattapoom Wilawan, a passionate Front-End Developer. I am actively practicing and improving my coding skills, with a keen interest in modern technologies. I enjoy creating user-friendly applications and continuously learning to enhance my craft.
           </p>
           <div className="pt-2 flex items-center gap-4 text-sm">
-            <a href="/header-and-footer/contact" className="px-5 py-2.5 bg-white text-black font-medium rounded hover:bg-neutral-200 transition-colors">
+            <a href="/contact" className="px-5 py-2.5 bg-white text-black font-medium rounded hover:bg-neutral-200 transition-colors">
               Contact Me
             </a>
             <a href="https://github.com/haerinforever" target="_blank" rel="noreferrer" className="px-5 py-2.5 border border-neutral-800 text-neutral-300 font-medium rounded hover:border-white hover:text-white transition-colors">
@@ -72,33 +41,17 @@ export default function MinimalistPortfolio() {
             </h2>
           </div>
 
+          {/* เรียกใช้งาน ProjectCard */}
           <div className="space-y-6">
             {displayedProjects.map((project) => (
-              <a key={project.id} href={project.link} className="group block p-6 border border-neutral-900 hover:border-neutral-700 rounded-lg transition-all duration-200 bg-neutral-950/50">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
-                  <h3 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4">
-                    {project.title}
-                  </h3>
-                  <span className="text-xs text-neutral-500 tracking-wider">↗</span>
-                </div>
-                <p className="text-neutral-400 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="text-[11px] px-2 py-0.5 bg-neutral-900 text-neutral-300 border border-neutral-800 rounded">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
 
           {hasMore && (
             <div className="pt-2">
               <Link
-                href="/header-and-footer/timeline/"
+                href="/work"
                 className="block w-full py-3 border border-neutral-800 hover:border-neutral-600 rounded-lg text-xs font-semibold tracking-widest uppercase text-neutral-400 hover:text-white transition-colors duration-200 bg-neutral-950 text-center"
               >
                 Show More ({PROJECTS.length - visibleCount} More) →
@@ -106,6 +59,7 @@ export default function MinimalistPortfolio() {
             </div>
           )}
         </section>
+
         <Footer />
 
       </div>

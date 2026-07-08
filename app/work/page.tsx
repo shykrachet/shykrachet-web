@@ -1,41 +1,7 @@
 "use client";
 import React from "react";
 import { Header, Footer } from "@/components/headerfooter";
-
-const PROJECTS = [
-  {
-    id: 1,
-    title: "Syndicate",
-    year: "2026",
-    description: "Frontend Developer Intern at Syndicate. Collaborated with the development team to build and maintain websites and applications for the company.",
-    tags: ["Next.js", "TailwindCSS", "TypeScript"],
-    link: "https://github.com/Guru-Thailand",
-  },
-  {
-    id: 2,
-    title: "osu.vocoid.xyz",
-    year: "2025",
-    description: "Web Developer & Moderator for a private osu! server. Co-created a private server for a gaming community, responsible for web development and monitoring player activity.",
-    tags: ["Ubuntu", "MySQL"],
-    link: "https://osu.vocoid.xyz/",
-  },
-  {
-    id: 3,
-    title: "WilaLab Solutions",
-    year: "2024",
-    description: "Assistant Web Designer. Assisted my brother in designing various website projects.",
-    tags: ["Html", "Css", "Javascript"],
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Beginner Web Developer",
-    year: "2024",
-    description: "Began building web development skills under the guidance and support of my brother. Started with HTML, CSS, and JavaScript as a foundation for self-paced learning.",
-    tags: ["Html", "Css", "Javascript"],
-    link: "#",
-  },
-];
+import { PROJECTS } from "@/data/projects"; 
 
 export default function TimelinePage() {
   const groupedProjects = PROJECTS.reduce((acc, project) => {
@@ -46,18 +12,19 @@ export default function TimelinePage() {
     acc[year].push(project);
     return acc;
   }, {} as Record<string, typeof PROJECTS>);
-
   const sortedYears = Object.keys(groupedProjects).sort((a, b) => b.localeCompare(a));
 
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black antialiased">
       <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-15">
         <Header />
+        
         <section id="projects" className="space-y-12">
           <div className="border-b border-neutral-900 pb-4">
-            <h2 className="text-sm font-semibold tracking-widest uppercase text-neutral-500">
+            <h2 className="text-l font-semibold tracking-widest uppercase text-neutral-500 text-white">
               Timelines
             </h2>
+            <p className="text-neutral-400 text-base leading-relaxed"> Here is a breakdown of my work history and experience</p>
           </div>
 
           <div className="space-y-12">
@@ -80,8 +47,8 @@ export default function TimelinePage() {
                         <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-white">
                           {project.title}
                         </h4>
-                        <span className="text-xs text-neutral-500 tracking-wider transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      
+                        <span className="text-xs text-neutral-500 tracking-wider transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                          ↗
                         </span>
                       </div>
                       <p className="text-neutral-400 text-sm mb-4 leading-relaxed">
@@ -106,7 +73,6 @@ export default function TimelinePage() {
         </section>
 
         <Footer />
-
       </div>
     </div>
   );
