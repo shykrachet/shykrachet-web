@@ -9,7 +9,7 @@ const navLinks = [
     name: "About", 
     subItems: [
       { name: "AboutMe", href: "/aboutme" },
-      { name: "osu!", href: "https://osu.ppy.sh/users/12852613" }
+      { name: "osu!", href: "/osu" }
     ] 
   },
   { name: "Work", href: "/work" },
