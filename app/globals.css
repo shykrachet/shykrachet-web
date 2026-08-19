@@ -1,26 +1,171 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --page-bg: #0a0a0a;
+  --page-fg: #f5f5f5;
+  --muted: #a3a3a3;
+  --subtle: #737373;
+  --border: #262626;
+  --border-strong: #737373;
+  --surface: #111111;
+  --surface-soft: rgb(23 23 23 / 0.5);
+  --surface-hover: #1f1f1f;
+  --font-sans-active: var(--font-athiti);
+}
+
+html.light {
+  --background: #fafafa;
   --foreground: #171717;
+  --page-bg: #fafafa;
+  --page-fg: #171717;
+  --muted: #525252;
+  --subtle: #737373;
+  --border: #d4d4d4;
+  --border-strong: #737373;
+  --surface: #ffffff;
+  --surface-soft: rgb(255 255 255 / 0.58);
+  --surface-hover: #f5f5f5;
+}
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --page-bg: #0a0a0a;
+  --page-fg: #f5f5f5;
+  --muted: #a3a3a3;
+  --subtle: #737373;
+  --border: #262626;
+  --border-strong: #737373;
+  --surface: #111111;
+  --surface-soft: rgb(23 23 23 / 0.5);
+  --surface-hover: #1f1f1f;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-athiti);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans-active), Arial, Helvetica, sans-serif;
+}
+
+.font-thai {
+  font-family: var(--font-athiti), Arial, Helvetica, sans-serif;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 420ms;
+  transition-timing-function: ease-in-out;
+}
+
+html.theme-changing,
+html.theme-changing *,
+html.theme-changing *::before,
+html.theme-changing *::after {
+  transition-duration: 520ms !important;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.theme-switch {
+  transition:
+    transform 240ms ease,
+    background-color 300ms ease,
+    border-color 300ms ease;
+  will-change: transform;
+}
+
+.theme-switch-thumb {
+  transition:
+    transform 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 420ms ease,
+    color 420ms ease;
+  will-change: transform;
+}
+
+.header-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.25rem;
+}
+
+.header-nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.25rem;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.header-nav-link-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.language-control {
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+  will-change: transform, opacity;
+}
+
+.language-control-fading {
+  opacity: 0.35;
+  transform: translateY(-1px);
+}
+
+.language-dropdown {
+  animation: dropdownFade 180ms ease-out both;
+  transform-origin: top right;
+}
+
+.language-dropdown-fading {
+  opacity: 0.35;
+  transform: translateY(-4px) scale(0.98);
+}
+
+.language-option {
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

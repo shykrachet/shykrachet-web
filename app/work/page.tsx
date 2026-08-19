@@ -2,8 +2,10 @@
 import React from "react";
 import { Header, Footer } from "@/components/headerfooter";
 import { PROJECTS } from "@/data/projects";
+import { usePreferences } from "@/components/preferences-provider";
 
 export default function TimelinePage() {
+  const { language, t } = usePreferences();
   const groupedProjects = PROJECTS.reduce((acc, project) => {
     const year = project.year;
     if (!acc[year]) {
@@ -15,72 +17,69 @@ export default function TimelinePage() {
   const sortedYears = Object.keys(groupedProjects).sort((a, b) => b.localeCompare(a));
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black antialiased">
-      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-15">
+    <div className="min-h-screen bg-[var(--page-bg)] text-[var(--page-fg)] font-sans selection:bg-[var(--page-fg)] selection:text-[var(--page-bg)] antialiased">
+      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-16">
         <Header />
         <section id="goals" className="space-y-6">
-          <div className="border-b border-neutral-900 pb-4">
-            <h2 className="text-l font-semibold tracking-widest uppercase text-white">
-              Current Focus & Goals
+          <div className="border-b border-[var(--border)] pb-4">
+            <h2 className="text-lg font-semibold tracking-widest uppercase text-[var(--page-fg)]">
+              {t.work.focusTitle}
             </h2>
-            <p className="text-neutral-400 text-base leading-relaxed mt-2">
-              What I am currently focusing on and aiming to achieve
+            <p className="text-[var(--muted)] text-base leading-relaxed mt-2">
+              {t.work.focusDescription}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-6 border border-neutral-900 hover:border-neutral-700 rounded-lg transition-all duration-200 bg-neutral-950/50">
-              <div className="flex items-center gap-2 mb-3 text-neutral-400">
+            <div className="p-6 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg transition-all duration-200 bg-[var(--surface-soft)]">
+              <div className="flex items-center gap-2 mb-3 text-[var(--muted)]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
                   <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
                   <line x1="6" y1="6" x2="6.01" y2="6" />
                   <line x1="6" y1="18" x2="6.01" y2="18" />
                 </svg>
-                <h3 className="text-white font-medium tracking-wide">
-                  osu!server
+                <h3 className="text-[var(--page-fg)] font-medium tracking-wide">
+                  {t.work.osuTitle}
                 </h3>
               </div>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                I'm really into playing osu!, so I've always wanted to host my own server.
-                It's a dream of mine and something I want to try at least once, mostly just to learn how to manage a server.
-                But well, I don't have the budget for it right now, lol.
+              <p className="text-[var(--muted)] text-sm leading-relaxed">
+                {t.work.osuDescription}
               </p>
             </div>
 
-            <div className="p-6 border border-neutral-900 hover:border-neutral-700 rounded-lg transition-all duration-200 bg-neutral-950/50">
-              <div className="flex items-center gap-2 mb-3 text-neutral-400">
+            <div className="p-6 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg transition-all duration-200 bg-[var(--surface-soft)]">
+              <div className="flex items-center gap-2 mb-3 text-[var(--muted)]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <circle cx="12" cy="12" r="6" />
                   <circle cx="12" cy="12" r="2" />
                 </svg>
-                <h3 className="text-white font-medium tracking-wide">
-                  Food Order Kmutnb
+                <h3 className="text-[var(--page-fg)] font-medium tracking-wide">
+                  {t.work.foodTitle}
                 </h3>
               </div>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                I've set a new goal for myself: I want to rebuild my previous university capstone project so it can be practically implemented on campus.
-                The project is a food ordering system for the university cafeteria.
+              <p className="text-[var(--muted)] text-sm leading-relaxed">
+                {t.work.foodDescription}
               </p>
             </div>
           </div>
         </section>
 
         <section id="projects" className="space-y-12">
-          <div className="border-b border-neutral-900 pb-4">
-            <h2 className="text-l font-semibold tracking-widest uppercase text-white">
-              Timelines
+          <div className="border-b border-[var(--border)] pb-4">
+            <h2 className="text-lg font-semibold tracking-widest uppercase text-[var(--page-fg)]">
+              {t.work.timelinesTitle}
             </h2>
-            <p className="text-neutral-400 text-base leading-relaxed mt-2">
-              Here is a breakdown of my work history and experience
+            <p className="text-[var(--muted)] text-base leading-relaxed mt-2">
+              {t.work.timelinesDescription}
             </p>
           </div>
 
           <div className="space-y-12">
             {sortedYears.map((year) => (
               <div key={year} className="space-y-4">
-                <h3 className="text-lg font-bold text-neutral-400 tracking-wider sticky top-0 bg-black/80 backdrop-blur-sm py-2 z-10">
+                <h3 className="text-lg font-bold text-[var(--muted)] tracking-wider sticky top-0 bg-[var(--page-bg)]/80 backdrop-blur-sm py-2 z-10">
                   {year}
                 </h3>
 
@@ -91,24 +90,24 @@ export default function TimelinePage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group block p-6 border border-neutral-900 hover:border-neutral-700 rounded-lg transition-all duration-200 bg-neutral-950/50"
+                      className="group block p-6 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg transition-all duration-200 bg-[var(--surface-soft)]"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
-                        <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-white">
-                          {project.title}
+                        <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-[var(--page-fg)]">
+                          {project.title[language]}
                         </h4>
-                        <span className="text-xs text-neutral-500 tracking-wider transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                        <span className="text-xs text-[var(--subtle)] tracking-wider transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                           ↗
                         </span>
                       </div>
-                      <p className="text-neutral-400 text-sm mb-4 leading-relaxed">
-                        {project.description}
+                      <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
+                        {project.description[language]}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-[11px] px-2 py-0.5 bg-neutral-900 text-neutral-300 border border-neutral-800 rounded"
+                            className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded"
                           >
                             {tag}
                           </span>
