@@ -2,16 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Header, Footer } from "../components/headerfooter"; 
-import { PROJECTS } from "@/data/projects";
-import ProjectCard from "@/components/project";
-import { usePreferences } from "@/components/preferences-provider";
 
 export default function MinimalistPortfolio() {
-  const visibleCount = 2;
-  const displayedProjects = PROJECTS.slice(0, visibleCount);
-  const hasMore = visibleCount < PROJECTS.length;
-  const { t } = usePreferences();
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [copiedType, setCopiedType] = useState("");
@@ -38,28 +30,28 @@ export default function MinimalistPortfolio() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[var(--page-bg)] text-[var(--page-fg)] font-sans selection:bg-[var(--page-fg)] selection:text-[var(--page-bg)] antialiased">
-      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-24">
+    <div className="snow-fall relative min-h-screen bg-[var(--page-bg)] text-[var(--page-fg)] font-sans selection:bg-[var(--page-fg)] selection:text-[var(--page-bg)] antialiased">
+      <div className="page-transition-content relative z-10 max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-24">
 
         <Header />
         
         <section id="about" className="space-y-6">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
             Nattapoom Wilawan <br />
-            <span className="text-[var(--subtle)] font-normal">{t.home.role}</span>
+            <span className="text-[var(--subtle)] font-normal">Full-Stack Developer</span>
           </h1>
           <p className="text-[var(--muted)] text-base leading-relaxed">
-            {t.home.intro}
+            Hello! I&apos;m Nattapoom Wilawan, a passionate Front-End Developer. I am actively practicing and improving my coding skills, with a keen interest in modern technologies. I enjoy creating user-friendly applications and continuously learning to enhance my craft.
           </p>
           <div className="pt-2 flex items-center gap-4 text-sm">
             <button 
               onClick={openModal}
               className="px-5 py-2.5 bg-[var(--page-fg)] text-[var(--page-bg)] font-medium rounded hover:opacity-80 transition-opacity"
             >
-              {t.home.contact}
+              Contact Me
             </button>
-            <a href="https://github.com/haerinforever" target="_blank" rel="noreferrer" className="px-5 py-2.5 border border-[var(--border)] text-[var(--muted)] font-medium rounded hover:border-[var(--border-strong)] hover:text-[var(--page-fg)] transition-colors">
-              {t.home.github}
+            <a href="https://github.com/shykrachet" target="_blank" rel="noreferrer" className="px-5 py-2.5 border border-[var(--border)] text-[var(--muted)] font-medium rounded hover:border-[var(--border-strong)] hover:text-[var(--page-fg)] transition-colors">
+              GitHub
             </a>
           </div>
         </section>
@@ -67,26 +59,69 @@ export default function MinimalistPortfolio() {
         <section id="projects" className="space-y-8">
           <div className="border-b border-[var(--border)] pb-4">
             <h2 className="text-sm font-semibold tracking-widest uppercase text-[var(--subtle)]">
-              {t.home.timelines}
+              Timelines
             </h2>
           </div>
 
           <div className="space-y-6">
-            {displayedProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+            <a
+              href="https://github.com/Guru-Thailand"
+              className="group block rounded-lg border border-[var(--border)] bg-[var(--surface-soft)] p-6 transition-all duration-200 hover:border-[var(--border-strong)]"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+                <h3 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4">
+                  Syndicate
+                </h3>
+                <span className="text-xs text-[var(--subtle)] tracking-wider">2026 ↗</span>
+              </div>
+              <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
+                Frontend Developer Intern at Syndicate. Collaborated with the development team to build and maintain websites and applications for the company.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                  Next.js
+                </span>
+                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                  TailwindCSS
+                </span>
+                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                  TypeScript
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="https://osu.vocoid.xyz/"
+              className="group block rounded-lg border border-[var(--border)] bg-[var(--surface-soft)] p-6 transition-all duration-200 hover:border-[var(--border-strong)]"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+                <h3 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4">
+                  osu.vocoid.xyz
+                </h3>
+                <span className="text-xs text-[var(--subtle)] tracking-wider">2025 ↗</span>
+              </div>
+              <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
+                Web Developer & Moderator for a private osu! server. Co-created a private server for a gaming community, responsible for web development and monitoring player activity.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                  Ubuntu
+                </span>
+                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                  MySQL
+                </span>
+              </div>
+            </a>
           </div>
 
-          {hasMore && (
-            <div className="pt-2">
-              <Link
-                href="/work"
-                className="block w-full py-3 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg text-xs font-semibold tracking-widest uppercase text-[var(--muted)] hover:text-[var(--page-fg)] transition-colors duration-200 bg-[var(--surface)] text-center"
-              >
-                {t.home.showMorePrefix} ({PROJECTS.length - visibleCount} {t.home.showMoreSuffix}) →
-              </Link>
-            </div>
-          )}
+          <div className="pt-2">
+            <Link
+              href="/work"
+              className="block w-full py-3 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg text-xs font-semibold tracking-widest uppercase text-[var(--muted)] hover:text-[var(--page-fg)] transition-colors duration-200 bg-[var(--surface)] text-center"
+            >
+              Show More (2 More) →
+            </Link>
+          </div>
         </section>
 
         <Footer />
@@ -136,7 +171,7 @@ export default function MinimalistPortfolio() {
               >
                 ✕
               </button>
-              <h2 className="text-xl font-bold mb-6">{t.home.modalTitle}</h2>
+              <h2 className="text-xl font-bold mb-6">Contact Me</h2>
               
               <div className="flex flex-col gap-3">
                 {/* LinkTree */}
@@ -203,7 +238,7 @@ export default function MinimalistPortfolio() {
                     <span>Discord</span>
                   </div>
                   <span className={`text-xs ${copiedType === "discord" ? "text-green-400" : "text-[var(--subtle)]"}`}>
-                    {copiedType === "discord" ? t.home.copied : "shykrachet"}
+                    {copiedType === "discord" ? "Copied!" : "shykrachet"}
                   </span>
                 </button>
 
@@ -219,7 +254,7 @@ export default function MinimalistPortfolio() {
                     <span>LINE ID</span>
                   </div>
                   <span className={`text-xs ${copiedType === "line" ? "text-green-400" : "text-[var(--subtle)]"}`}>
-                    {copiedType === "line" ? t.home.copied : "nayoki_ma"}
+                    {copiedType === "line" ? "Copied!" : "nayoki_ma"}
                   </span>
                 </button>
               </div>
