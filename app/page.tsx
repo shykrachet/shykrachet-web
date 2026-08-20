@@ -41,7 +41,9 @@ export default function MinimalistPortfolio() {
             <span className="text-[var(--subtle)] font-normal">Full-Stack Developer</span>
           </h1>
           <p className="text-[var(--muted)] text-base leading-relaxed">
-            Hello! I&apos;m Nattapoom Wilawan, a passionate Front-End Developer. I am actively practicing and improving my coding skills, with a keen interest in modern technologies. I enjoy creating user-friendly applications and continuously learning to enhance my craft.
+            Hello! I'm Nattapoom Wilawan, a passionate Programmer and Graphic Designer. 
+            I am actively practicing and improving my coding and design skills, with a keen interest in modern technologies. 
+            I enjoy creating user-friendly applications and visually appealing designs while continuously learning to enhance my craft.
           </p>
           <div className="pt-2 flex items-center gap-4 text-sm">
             <button 
