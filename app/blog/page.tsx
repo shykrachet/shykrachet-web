@@ -188,12 +188,14 @@ export default function BlogPage() {
             </div>
 
             <p className="blog-readable-copy">
-              เป็นจุดเริ่มต้นที่ได้เข้าร่วมงานกับทีม Syndicate ในฐานะนักพัฒนา
-              นักศึกษาฝึกงานได้ทำหน้าที่เป็น Developer หลังจากที่ได้เข้ามาทำงาน
-              ได้ความรู้เรื่องการเขียนโปรแกรมเป็นอย่างมาก คนในทีมคอยช่วยเหลือกัน
-              ผมรู้สึกดีมาก ๆ ทุกคนเป็นกันเองและบอสใจดีมาก ๆ มีปัญหาอะไรปรึกษาเขาได้ตลอดเลย
-              ผมได้เรียนรู้เรื่องการทำงานจริง ทั้งเรื่องการเขียนโปรแกรมและการทำงานเป็นทีม
-              รู้สึกขอบคุณมาก ๆ ที่ได้เข้ามาทำงานกับทีม Syndicate
+              This was the beginning of my time working with the Syndicate team
+              as a developer intern. After joining, I worked as a developer and
+              learned a lot about programming. Everyone on the team helped one
+              another, and I felt really good there because everyone was
+              friendly. My boss was very kind too, and whenever I had a problem,
+              I could always ask for advice. I learned what real work is like,
+              both in programming and teamwork, and I am truly grateful for the
+              chance to work with the Syndicate team.
             </p>
           </section>
 
@@ -298,11 +300,14 @@ export default function BlogPage() {
             </div>
 
             <p className="blog-readable-copy">
-              ได้ซื้อโน๊ตบุ๊คแล็ปท็อปเอามาใช้งานโดยเฉพาะแลกกับการที่ขายคอมพิวเตอร์ไป
-              เพราะอยากที่จะโฟกัสกับการเขียนโปรแกรมเป็นหลักและความสะดวกสบาย ๆ
-              รุ่นที่ซื้อคือ Asus Vivobook 16 แต่เป็นของมือสองแต่สภาพที่โอเครับได้
-              และราคาก็ไม่แพง จริง ๆ อยากลองซื้อ Macbook แต่ไม่อยากใช้ของแพง
-              เพราะมีงบแล้วชีวิตการงานดี ก็คงซื้อมาใช้ทำงาน
+              I bought a laptop specifically for work after selling my desktop
+              computer. I wanted to focus mainly on programming and have
+              something more convenient to carry around. The model I bought is
+              an Asus Vivobook 16. It is second-hand, but the condition is
+              acceptable and the price was not expensive. Honestly, I wanted to
+              try buying a MacBook, but I did not want to spend that much yet.
+              When I have the budget and my work life is more stable, I will
+              probably buy one for work.
             </p>
           </section>
 
