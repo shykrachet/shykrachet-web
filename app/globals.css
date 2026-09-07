@@ -29,8 +29,8 @@ html.light {
   --surface: #ffffff;
   --surface-soft: rgb(255 255 255 / 0.58);
   --surface-hover: #f5f5f5;
-  --snow-dot: rgb(82 82 82 / 0.22);
-  --snow-dot-soft: rgb(82 82 82 / 0.12);
+  --snow-dot: rgb(23 23 23 / 0.36);
+  --snow-dot-soft: rgb(82 82 82 / 0.22);
 }
 
 html.dark {
@@ -149,6 +149,24 @@ html.theme-changing *::after {
 
 .theme-switch-active .theme-switch-icon {
   animation: iconSpin 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-clock {
+  display: inline-flex;
+  min-width: 4.75rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.65rem;
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgb(0 0 0 / 0.08);
 }
 
 .header-nav-link {
@@ -326,6 +344,98 @@ html.theme-changing *::after {
 .page-transition-content {
   animation: pageFadeIn 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
   will-change: opacity, transform;
+}
+
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--page-bg);
+  color: var(--page-fg);
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.welcome-screen-leaving {
+  opacity: 0;
+}
+
+.welcome-content-hidden {
+  visibility: hidden;
+}
+
+.welcome-content-revealed {
+  animation: welcomeReveal 500ms ease both;
+}
+
+@keyframes welcomeReveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.welcome-greeting {
+  min-height: 1.65em;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .welcome-greeting {
+    font-size: 7rem;
+  }
+}
+
+.welcome-skip {
+  position: absolute;
+  bottom: max(2rem, env(safe-area-inset-bottom));
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.welcome-skip:hover {
+  color: var(--page-fg);
+}
+
+.welcome-skip:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.welcome-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  margin-left: 0.2em;
+  vertical-align: -0.05em;
+  background: currentColor;
+  animation: welcomeBlink 800ms step-end 4 forwards;
+}
+
+@keyframes welcomeBlink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-screen {
+    transition: none;
+  }
+
+  .welcome-content-revealed {
+    animation: none;
+  }
+
+  .welcome-cursor {
+    display: none;
+    animation: none;
+  }
 }
 
 .about-photo-card {

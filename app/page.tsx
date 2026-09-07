@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Welcome from "../components/welcome";
 import { Header, Footer } from "../components/headerfooter"; 
 
 export default function MinimalistPortfolio() {
@@ -30,6 +31,7 @@ export default function MinimalistPortfolio() {
   };
 
   return (
+    <Welcome>
     <div className="snow-fall relative min-h-screen bg-[var(--page-bg)] text-[var(--page-fg)] font-sans selection:bg-[var(--page-fg)] selection:text-[var(--page-bg)] antialiased">
       <div className="page-transition-content relative z-10 max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-24">
 
@@ -41,7 +43,7 @@ export default function MinimalistPortfolio() {
             <span className="text-[var(--subtle)] font-normal">Full-Stack Developer</span>
           </h1>
           <p className="text-[var(--muted)] text-base leading-relaxed">
-            Hello! I'm Nattapoom Wilawan, a passionate Programmer and Graphic Designer. 
+            Hello! I&apos;m Nattapoom Wilawan, a passionate Programmer and Graphic Designer.
             I am actively practicing and improving my coding and design skills, with a keen interest in modern technologies. 
             I enjoy creating user-friendly applications and visually appealing designs while continuously learning to enhance my craft.
           </p>
@@ -55,74 +57,6 @@ export default function MinimalistPortfolio() {
             <a href="https://github.com/shykrachet" target="_blank" rel="noreferrer" className="px-5 py-2.5 border border-[var(--border)] text-[var(--muted)] font-medium rounded hover:border-[var(--border-strong)] hover:text-[var(--page-fg)] transition-colors">
               GitHub
             </a>
-          </div>
-        </section>
-
-        <section id="projects" className="space-y-8">
-          <div className="border-b border-[var(--border)] pb-4">
-            <h2 className="text-sm font-semibold tracking-widest uppercase text-[var(--subtle)]">
-              Timelines
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            <a
-              href="https://github.com/Guru-Thailand"
-              className="group block rounded-lg border border-[var(--border)] bg-[var(--surface-soft)] p-6 transition-all duration-200 hover:border-[var(--border-strong)]"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
-                <h3 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4">
-                  Syndicate
-                </h3>
-                <span className="text-xs text-[var(--subtle)] tracking-wider">2026 ↗</span>
-              </div>
-              <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
-                Frontend Developer Intern at Syndicate. Collaborated with the development team to build and maintain websites and applications for the company.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
-                  Next.js
-                </span>
-                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
-                  TailwindCSS
-                </span>
-                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
-                  TypeScript
-                </span>
-              </div>
-            </a>
-
-            <a
-              href="https://osu.vocoid.xyz/"
-              className="group block rounded-lg border border-[var(--border)] bg-[var(--surface-soft)] p-6 transition-all duration-200 hover:border-[var(--border-strong)]"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
-                <h3 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4">
-                  osu.vocoid.xyz
-                </h3>
-                <span className="text-xs text-[var(--subtle)] tracking-wider">2025 ↗</span>
-              </div>
-              <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
-                Web Developer & Moderator for a private osu! server. Co-created a private server for a gaming community, responsible for web development and monitoring player activity.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
-                  Ubuntu
-                </span>
-                <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
-                  MySQL
-                </span>
-              </div>
-            </a>
-          </div>
-
-          <div className="pt-2">
-            <Link
-              href="/work"
-              className="block w-full py-3 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg text-xs font-semibold tracking-widest uppercase text-[var(--muted)] hover:text-[var(--page-fg)] transition-colors duration-200 bg-[var(--surface)] text-center"
-            >
-              Show More (2 More) →
-            </Link>
           </div>
         </section>
 
@@ -266,5 +200,6 @@ export default function MinimalistPortfolio() {
         </>
       )}
     </div>
+    </Welcome>
   );
 }

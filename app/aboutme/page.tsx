@@ -63,6 +63,9 @@ export default function AboutPage() {
                             <span className="px-3 py-1.5 bg-[var(--surface-soft)] border border-[var(--border)] rounded-md text-sm text-[var(--muted)] hover:bg-[var(--surface-hover)] transition-colors">
                                 HTML
                             </span>
+                            <span className="px-3 py-1.5 bg-[var(--surface-soft)] border border-[var(--border)] rounded-md text-sm text-[var(--muted)] hover:bg-[var(--surface-hover)] transition-colors">
+                                SQL
+                            </span>
                         </div>
                     </section>
                 </main>

@@ -3,9 +3,21 @@
 import { useEffect, useRef, useState } from "react";
 import { usePreferences } from "@/components/preferences-provider";
 
+const localTimeFormatter = new Intl.DateTimeFormat("en-GB", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+});
+
+function getLocalTime() {
+  return localTimeFormatter.format(new Date());
+}
+
 export default function HeaderControls() {
   const { theme, toggleTheme } = usePreferences();
   const [isThemeSwitching, setIsThemeSwitching] = useState(false);
+  const [localTime, setLocalTime] = useState("");
   const themeSwitchTimeout = useRef<number | null>(null);
   const nextTheme = theme === "dark" ? "Light" : "Dark";
 
@@ -28,7 +40,18 @@ export default function HeaderControls() {
   };
 
   useEffect(() => {
+    const updateLocalTime = () => {
+      setLocalTime(getLocalTime());
+    };
+    const firstTick = window.setTimeout(updateLocalTime, 0);
+    const timeInterval = window.setInterval(() => {
+      updateLocalTime();
+    }, 1000);
+
     return () => {
+      window.clearTimeout(firstTick);
+      window.clearInterval(timeInterval);
+
       if (themeSwitchTimeout.current) {
         window.clearTimeout(themeSwitchTimeout.current);
       }
@@ -37,6 +60,14 @@ export default function HeaderControls() {
 
   return (
     <div className="flex shrink-0 items-center gap-2">
+      <time
+        className="site-clock"
+        dateTime={localTime}
+        aria-label={`Local time ${localTime}`}
+        title="Local time"
+      >
+        {localTime || "--:--:--"}
+      </time>
       <button
         type="button"
         onClick={handleThemeToggle}

@@ -35,21 +35,6 @@ export default function TimelinePage() {
               </p>
             </div>
 
-            <div className="p-6 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg transition-all duration-200 bg-[var(--surface-soft)]">
-              <div className="flex items-center gap-2 mb-3 text-[var(--muted)]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <circle cx="12" cy="12" r="2" />
-                </svg>
-                <h3 className="text-[var(--page-fg)] font-medium tracking-wide">
-                  Food Order KMUTNB
-                </h3>
-              </div>
-              <p className="text-[var(--muted)] text-sm leading-relaxed">
-                I&apos;ve set a new goal for myself: I want to rebuild my previous university capstone project so it can be practically implemented on campus. The project is a food ordering system for the university cafeteria.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -68,6 +53,34 @@ export default function TimelinePage() {
               <h3 className="text-lg font-bold text-[var(--muted)] tracking-wider sticky top-0 bg-[var(--page-bg)]/80 backdrop-blur-sm py-2 z-10">
                 2026
               </h3>
+              <a
+                href="https://github.com/shydevelopment/food-order"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-6 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg transition-all duration-200 bg-[var(--surface-soft)]"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+                  <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-[var(--page-fg)]">
+                    Food Order KMUTNB
+                  </h4>
+                </div>
+                <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
+                  I have redeveloped my university senior project and completed the online food ordering system for the university cafeteria. 
+                  Although some parts of the website may still be incomplete or have a few bugs, it is fully functional. 
+                  I am continuing its development and planning to build a mobile application as well.
+                </p> 
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                    Next.js
+                  </span>
+                  <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                    Supabases
+                  </span>
+                  <span className="text-[11px] px-2 py-0.5 bg-[var(--surface)] text-[var(--muted)] border border-[var(--border)] rounded">
+                    TypeScript
+                  </span>
+                </div>
+              </a>
 
               <a
                 href="https://github.com/Guru-Thailand"
@@ -79,9 +92,6 @@ export default function TimelinePage() {
                   <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-[var(--page-fg)]">
                     Syndicate
                   </h4>
-                  <span className="text-xs text-[var(--subtle)] tracking-wider transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                    ↗
-                  </span>
                 </div>
                 <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
                   Frontend Developer Intern at Syndicate. Collaborated with the development team to build and maintain websites and applications for the company.
@@ -115,9 +125,6 @@ export default function TimelinePage() {
                   <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-[var(--page-fg)]">
                     osu.vocoid.xyz
                   </h4>
-                  <span className="text-xs text-[var(--subtle)] tracking-wider transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                    ↗
-                  </span>
                 </div>
                 <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
                   Web Developer & Moderator for a private osu! server. Co-created a private server for a gaming community, responsible for web development and monitoring player activity.
@@ -130,7 +137,7 @@ export default function TimelinePage() {
                     MySQL
                   </span>
                 </div>
-              </a>
+              </a> 
             </div>
 
             <div className="space-y-4">
@@ -149,9 +156,6 @@ export default function TimelinePage() {
                     <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-[var(--page-fg)]">
                       WilaLab Solutions
                     </h4>
-                    <span className="text-xs text-[var(--subtle)] tracking-wider transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      ↗
-                    </span>
                   </div>
                   <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
                     Assistant Web Designer. Assisted my brother in designing various website projects.
@@ -179,9 +183,6 @@ export default function TimelinePage() {
                     <h4 className="text-lg font-medium group-hover:underline decoration-1 underline-offset-4 text-[var(--page-fg)]">
                       Beginner Web Developer
                     </h4>
-                    <span className="text-xs text-[var(--subtle)] tracking-wider transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      ↗
-                    </span>
                   </div>
                   <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
                     Began building web development skills under the guidance and support of my brother. Started with HTML, CSS, and JavaScript as a foundation for self-paced learning.
