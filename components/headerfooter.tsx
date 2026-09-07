@@ -219,7 +219,7 @@ export function Footer() {
       <p>
         © {new Date().getFullYear()} Nattapoom Wilawan. All rights reserved.
       </p>
-      <p>Built with Next.js & Tailwind CSS</p>
+      <p>Built with Next.js</p>
     </footer>
   );
 }
