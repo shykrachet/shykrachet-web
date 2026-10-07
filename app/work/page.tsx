@@ -35,7 +35,25 @@ export default function TimelinePage() {
               </p>
             </div>
 
+            <div className="p-6 border border-[var(--border)] hover:border-[var(--border-strong)] rounded-lg transition-all duration-200 bg-[var(--surface-soft)]">
+              <div className="flex items-center gap-2 mb-3 text-[var(--muted)]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
+                <h3 className="text-[var(--page-fg)] font-medium tracking-wide">
+                  OMTHT 2027 
+                </h3>
+              </div>
+              <p className="text-[var(--muted)] text-sm leading-relaxed">
+                I'm planning to organize the osu!mania Thailand Tournament 2027, bringing it back after a long hiatus since 2021. The tournament will be hosted by haerinforever and punuy.
+              </p>
+            </div>
           </div>
+
+          
         </section>
 
         <section id="projects" className="space-y-12">

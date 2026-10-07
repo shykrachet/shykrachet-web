@@ -6,12 +6,34 @@ import notebook2 from "@/app/assets/img-notebook/notebook2.jpg";
 import syndicate1 from "@/app/assets/img-syndicate/syndicate-1.jpg";
 import syndicate2 from "@/app/assets/img-syndicate/syndicate-2.jpg";
 import syndicate3 from "@/app/assets/img-syndicate/syndicate-3.jpg";
+import psc1 from "@/app/assets/img-psc/psc1.jpg";
+import psc2 from "@/app/assets/img-psc/psc2.jpg"; 
+import psc3 from "@/app/assets/img-psc/psc3.jpg";
 
 const blogDates = {
   syndicate: "2026-07-01",
   notebook: "2026-06-22",
   birthday: "2026-03-16",
+  psc: "2026-09-21",
 } as const;
+
+const pscImages = [
+  {
+    src: psc1,
+    alt: "Pattaya Sports Club preview 1",
+    fullAlt: "Pattaya Sports Club full preview 1",
+  },
+  {
+    src: psc2,
+    alt: "Pattaya Sports Club preview 2",
+    fullAlt: "Pattaya Sports Club full preview 2",
+  },
+  {
+    src: psc3,
+    alt: "Pattaya Sports Club preview 3",
+    fullAlt: "Pattaya Sports Club full preview 3",
+  },
+] as const;
 
 const syndicateImages = [
   {
@@ -62,6 +84,31 @@ export const BLOG_YEAR_2026 = blogDates.syndicate.slice(0, 4);
 export default function BlogYear2026() {
   return (
     <>
+      <section className="blog-readable-section space-y-5">
+        <div className="border-b border-[var(--border)] pb-4">
+          <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
+            {blogDates.psc}
+          </h2>
+          <h2 className="text-sm uppercase tracking-widest text-[var(--muted)]">
+            Pattaya Sports Club [Application]
+          </h2>
+        </div>
+
+        <BlogImageViewer
+          images={pscImages}
+          label="Pattaya Sports Club"
+          priority
+        />
+
+        <p className="blog-readable-copy">
+          For my final internship project at Syndicate, 
+          I was responsible for designing and developing the "Pattaya Sports Club" mobile application. 
+          The client commissioned the app to transition from their existing website to a more accessible mobile platform. 
+          Since the majority of their users are senior citizens, 
+          my primary focus was designing an intuitive, highly accessible, and easy-to-navigate interface tailored to their specific needs.
+        </p>
+      </section>
+
       <section className="blog-readable-section space-y-5">
         <div className="border-b border-[var(--border)] pb-4">
           <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
