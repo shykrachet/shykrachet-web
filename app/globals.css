@@ -12,7 +12,8 @@
   --surface: #111111;
   --surface-soft: rgb(23 23 23 / 0.5);
   --surface-hover: #1f1f1f;
-  --font-sans-active: var(--font-athiti);
+  --font-sans-active: var(--font-torus);
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --snow-dot: rgb(255 255 255 / 0.44);
   --snow-dot-soft: rgb(255 255 255 / 0.18);
 }
@@ -52,7 +53,7 @@ html.dark {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-athiti);
+  --font-sans: var(--font-torus);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -66,7 +67,7 @@ body {
 }
 
 .font-thai {
-  font-family: var(--font-athiti), Arial, Helvetica, sans-serif;
+  font-family: var(--font-torus), Arial, Helvetica, sans-serif;
 }
 
 html.dark {
@@ -157,9 +158,9 @@ html.theme-changing *::after {
   height: 2rem;
   align-items: center;
   justify-content: center;
-  padding: 0 0.65rem;
+  padding: 0 0.65rem 0.08rem;
   color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-torus), Arial, Helvetica, sans-serif;
   font-size: 0.72rem;
   font-variant-numeric: tabular-nums;
   line-height: 1;
