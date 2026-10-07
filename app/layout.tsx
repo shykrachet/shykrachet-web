@@ -1,17 +1,48 @@
 import type { Metadata } from "next";
-import { Athiti, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { PreferencesProvider } from "@/components/preferences-provider";
 import "./globals.css";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const athiti = Athiti({
-  variable: "--font-athiti",
-  subsets: ["latin", "thai"],
-  weight: ["400", "500", "600", "700"],
+const torus = localFont({
+  variable: "--font-torus",
+  display: "swap",
+  src: [
+    {
+      path: "../fonts/Torus-Thin.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Torus-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Torus-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Torus-SemiBold.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Torus-SemiBold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Torus-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Torus-Heavy.otf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -30,10 +61,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${athiti.variable} h-full antialiased`}
+      className={`${torus.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className={`${athiti.className} min-h-full flex flex-col`}>
+      <body className={`${torus.className} min-h-full flex flex-col`}>
         <PreferencesProvider>{children}</PreferencesProvider>
       </body>
     </html>
