@@ -217,7 +217,7 @@ export function Footer() {
   return (
     <footer className="mt-auto flex w-full flex-col items-center justify-between gap-3 border-t border-[var(--border)] pb-8 pt-12 text-center text-xs text-[var(--subtle)] md:flex-row md:gap-0 md:text-left">
       <p>
-        © {new Date().getFullYear()} Nattapoom Wilawan. All rights reserved.
+        © 2024 - {new Date().getFullYear()} Nattapoom Wilawan. All rights reserved.
       </p>
       <p>Built with Next.js</p>
     </footer>

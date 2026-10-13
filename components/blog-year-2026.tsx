@@ -5,16 +5,19 @@ import notebook1 from "@/app/assets/img-notebook/notebook1.jpg";
 import notebook2 from "@/app/assets/img-notebook/notebook2.jpg";
 import syndicate1 from "@/app/assets/img-syndicate/syndicate-1.jpg";
 import syndicate2 from "@/app/assets/img-syndicate/syndicate-2.jpg";
-import syndicate3 from "@/app/assets/img-syndicate/syndicate-3.jpg";
 import psc1 from "@/app/assets/img-psc/psc1.jpg";
 import psc2 from "@/app/assets/img-psc/psc2.jpg"; 
 import psc3 from "@/app/assets/img-psc/psc3.jpg";
+import mac1 from "@/app/assets/img-macbookneo/mac1.jpg";
+import mac3 from "@/app/assets/img-macbookneo/mac3.jpg";
+
 
 const blogDates = {
   syndicate: "2026-07-01",
   notebook: "2026-06-22",
   birthday: "2026-03-16",
   psc: "2026-09-21",
+  macbookneo: "2026-10-09",
 } as const;
 
 const pscImages = [
@@ -46,11 +49,6 @@ const syndicateImages = [
     alt: "Syndicate preview 2",
     fullAlt: "Syndicate full preview 2",
   },
-  {
-    src: syndicate3,
-    alt: "Syndicate preview 3",
-    fullAlt: "Syndicate full preview 3",
-  },
 ] as const;
 
 const notebookImages = [
@@ -79,11 +77,45 @@ const birthdayImages = [
   },
 ] as const;
 
+const macbookneoImages = [
+  {
+    src: mac1,
+    alt: "MacBook Neo preview 1",
+    fullAlt: "MacBook Neo full preview 1",
+  },
+  {
+    src: mac3,
+    alt: "MacBook Neo preview 3",
+    fullAlt: "MacBook Neo full preview 3",
+  }
+] as const;
+
 export const BLOG_YEAR_2026 = blogDates.syndicate.slice(0, 4);
 
 export default function BlogYear2026() {
   return (
     <>
+    <section className="blog-readable-section space-y-5">
+        <div className="border-b border-[var(--border)] pb-4">
+          <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
+            {blogDates.macbookneo}
+          </h2>
+          <h2 className="text-sm uppercase tracking-widest text-[var(--muted)]">
+            Apple MacBook Neo 13 [512GB/Pink]
+          </h2>
+        </div>
+
+        <BlogImageViewer
+          images={macbookneoImages}
+          label="MacBook Neo"
+          priority
+        />
+
+        <p className="blog-readable-copy">
+          lol mac user
+        </p>
+      </section>
+    
       <section className="blog-readable-section space-y-5">
         <div className="border-b border-[var(--border)] pb-4">
           <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
@@ -137,7 +169,7 @@ export default function BlogYear2026() {
         </p>
       </section>
 
-      <section className="blog-readable-section space-y-5">
+      {/* <section className="blog-readable-section space-y-5">
         <div className="border-b border-[var(--border)] pb-4">
           <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
             {blogDates.notebook}
@@ -162,9 +194,9 @@ export default function BlogYear2026() {
           did not want to spend that much yet. When I have the budget and my work
           life is more stable, I will probably buy one for work.
         </p>
-      </section>
+      </section> */}
 
-      <section className="blog-readable-section space-y-5">
+      {/* <section className="blog-readable-section space-y-5">
         <div className="border-b border-[var(--border)] pb-4">
           <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
             {blogDates.birthday}
@@ -177,7 +209,7 @@ export default function BlogYear2026() {
         <BlogImageViewer images={birthdayImages} label="birthday" />
 
         <p className="blog-readable-copy">The best day of my life.</p>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -9,14 +9,8 @@ import React, {
   useRef,
   useSyncExternalStore,
 } from "react";
+import { DEFAULT_THEME, THEME_STORAGE_KEY, type Theme } from "@/lib/theme";
 
-type Theme = "dark" | "light";
-
-const STORAGE_KEYS = {
-  theme: "portfolio-theme",
-};
-
-const DEFAULT_THEME: Theme = "dark";
 const THEME_TRANSITION_MS = 520;
 const PREFERENCES_CHANGE_EVENT = "portfolio-preferences-change";
 
@@ -36,8 +30,13 @@ function getStoredTheme(): Theme {
     return DEFAULT_THEME;
   }
 
-  const savedTheme = window.localStorage.getItem(STORAGE_KEYS.theme);
-  return isTheme(savedTheme) ? savedTheme : DEFAULT_THEME;
+  try {
+    const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    return isTheme(savedTheme) ? savedTheme : DEFAULT_THEME;
+  } catch {
+    const appliedTheme = document.documentElement.dataset.theme ?? null;
+    return isTheme(appliedTheme) ? appliedTheme : DEFAULT_THEME;
+  }
 }
 
 function getServerTheme(): Theme {
@@ -84,10 +83,11 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
     root.classList.remove("dark", "light");
     root.classList.add(nextTheme);
     root.dataset.theme = nextTheme;
-    window.localStorage.setItem(STORAGE_KEYS.theme, nextTheme);
   }, []);
 
   useEffect(() => {
+    // Hydration starts with the server snapshot; wait for the saved preference.
+    if (theme !== getStoredTheme()) return;
     applyTheme(theme);
   }, [applyTheme, theme]);
 
@@ -102,6 +102,11 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
   const setThemePreference = useCallback(
     (nextTheme: Theme) => {
       applyTheme(nextTheme, true);
+      try {
+        window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+      } catch {
+        // Keep the switch usable when browser storage is unavailable.
+      }
       emitPreferencesChange();
     },
     [applyTheme],

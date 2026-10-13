@@ -351,6 +351,7 @@ html.theme-changing *::after {
   position: fixed;
   inset: 0;
   z-index: 100;
+  isolation: isolate;
   display: grid;
   place-items: center;
   padding: 1.5rem;
@@ -378,6 +379,8 @@ html.theme-changing *::after {
 }
 
 .welcome-greeting {
+  position: relative;
+  z-index: 1;
   min-height: 1.65em;
   font-size: 4rem;
   font-weight: 700;
@@ -532,7 +535,9 @@ html.theme-changing *::after {
 }
 
 .snow-fall::before,
-.snow-fall::after {
+.snow-fall::after,
+.welcome-screen::before,
+.welcome-screen::after {
   position: fixed;
   inset: -140vh -12vw 0;
   z-index: 0;
@@ -542,7 +547,8 @@ html.theme-changing *::after {
   will-change: transform;
 }
 
-.snow-fall::before {
+.snow-fall::before,
+.welcome-screen::before {
   opacity: 0.72;
   background-image:
     radial-gradient(circle, var(--snow-dot) 0 0.8px, transparent 1.45px),
@@ -565,7 +571,8 @@ html.theme-changing *::after {
   animation: snowDriftWide 31s linear infinite;
 }
 
-.snow-fall::after {
+.snow-fall::after,
+.welcome-screen::after {
   opacity: 0.46;
   background-image:
     radial-gradient(circle, var(--snow-dot) 0 1.1px, transparent 1.95px),
@@ -754,7 +761,9 @@ html.theme-changing *::after {
   .theme-switch-active .theme-switch-icon,
   .theme-switch-active .theme-switch-thumb,
   .snow-fall::before,
-  .snow-fall::after {
+  .snow-fall::after,
+  .welcome-screen::before,
+  .welcome-screen::after {
     animation: none;
   }
 
@@ -770,7 +779,9 @@ html.theme-changing *::after {
   }
 
   .snow-fall::before,
-  .snow-fall::after {
+  .snow-fall::after,
+  .welcome-screen::before,
+  .welcome-screen::after {
     transform: translate3d(0, 70vh, 0);
   }
 }

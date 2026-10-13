@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { PreferencesProvider } from "@/components/preferences-provider";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
 const torus = localFont({
@@ -64,6 +65,9 @@ export default function RootLayout({
       className={`${torus.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body className={`${torus.className} min-h-full flex flex-col`}>
         <PreferencesProvider>{children}</PreferencesProvider>
       </body>
