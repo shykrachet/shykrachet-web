@@ -110,22 +110,9 @@ export default function MinimalistPortfolio() {
               <h2 className="text-xl font-bold mb-6">Contact Me</h2>
               
               <div className="flex flex-col gap-3">
-                {/* LinkTree */}
-                <a 
-                  href="https://linktr.ee/kittyboyyyyyy" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-[var(--surface-soft)] border border-[var(--border)] hover:bg-[var(--surface-hover)] hover:border-[var(--border-strong)] rounded-lg transition-all"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.736 5.853l4.005-4.117 2.325 2.38-4.2 4.005h5.908v3.305h-5.937l4.229 4.108-2.325 2.334-5.741-5.769v11.722h-3.17V11.834L3.089 17.603l-2.325-2.334 4.229-4.108H-.945V7.856h5.908L.763 3.851l2.325-2.38 4.005 4.117V.175h3.17v5.678z"/>
-                  </svg>
-                  <span>LinkTree</span>
-                </a>
-
                 {/* Instagram */}
                 <a 
-                  href="https://www.instagram.com/ranahtfai/" 
+                  href="https://www.instagram.com/shykrachet/" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-[var(--surface-soft)] border border-[var(--border)] hover:bg-[var(--surface-hover)] hover:border-[var(--border-strong)] rounded-lg transition-all"
@@ -175,22 +162,6 @@ export default function MinimalistPortfolio() {
                   </div>
                   <span className={`text-xs ${copiedType === "discord" ? "text-green-400" : "text-[var(--subtle)]"}`}>
                     {copiedType === "discord" ? "Copied!" : "shykrachet"}
-                  </span>
-                </button>
-
-                {/* LINE ID*/}
-                <button 
-                  onClick={() => handleCopy("nayoki_ma", "line")}
-                  className="w-full flex flex-col items-center justify-center gap-1 px-4 py-3 bg-[var(--surface-soft)] border border-[var(--border)] hover:bg-[var(--surface-hover)] hover:border-[var(--border-strong)] rounded-lg transition-all"
-                >
-                  <div className="flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19.365 9.863c0-3.83-3.918-6.945-8.73-6.945-4.811 0-8.729 3.115-8.729 6.945 0 3.473 3.153 6.402 7.377 6.866.286.052.677.16 1.026.543.19.208.31.554.31.554l-.16 1.57c-.027.27-.123.864.757.493.88-.37 4.743-2.795 6.425-4.752.12-.138 1.724-1.928 1.724-5.274zm-9.523 2.17h-2.126c-.198 0-.358-.16-.358-.358V7.545c0-.197.16-.357.358-.357h2.126c.198 0 .358.16.358.357v.643c0 .198-.16.358-.358.358h-1.483v.85h1.483c.198 0 .358.16.358.357v.643c0 .198-.16.358-.358.358h-1.483v.85h1.483c.198 0 .358.16.358.357v.643c0 .198-.16.358-.358.358zm3.018 0h-.643c-.198 0-.358-.16-.358-.358V7.545c0-.197.16-.357.358-.357h.643c.198 0 .358.16.358.357v4.13c0 .198-.16.358-.358.358zm4.496-.358v-2.71c0-.284-.226-.516-.51-.516-.285 0-.51.232-.51.516v2.71c0 .198-.16.358-.358.358h-.643c-.198 0-.358-.16-.358-.358V7.545c0-.197.16-.357.358-.357h.643c.198 0 .358.16.358.357v2.71c0 .285.225.517.51.517.284 0 .51-.232.51-.517v-2.71c0-.197.16-.357.358-.357h.643c.198 0 .358.16.358.357v4.13c0 .198-.16.358-.358.358h-.643c-.198 0-.358-.16-.358-.358z"/>
-                    </svg>
-                    <span>LINE ID</span>
-                  </div>
-                  <span className={`text-xs ${copiedType === "line" ? "text-green-400" : "text-[var(--subtle)]"}`}>
-                    {copiedType === "line" ? "Copied!" : "nayoki_ma"}
                   </span>
                 </button>
               </div>

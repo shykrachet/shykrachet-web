@@ -11,7 +11,6 @@ import psc3 from "@/app/assets/img-psc/psc3.jpg";
 import mac1 from "@/app/assets/img-macbookneo/mac1.jpg";
 import mac3 from "@/app/assets/img-macbookneo/mac3.jpg";
 
-
 const blogDates = {
   syndicate: "2026-07-01",
   notebook: "2026-06-22",
@@ -95,7 +94,24 @@ export const BLOG_YEAR_2026 = blogDates.syndicate.slice(0, 4);
 export default function BlogYear2026() {
   return (
     <>
-    <section className="blog-readable-section space-y-5">
+      <section className="blog-readable-section space-y-5">
+        <div className="border-b border-[var(--border)] pb-4">
+          <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
+            2026-10-31
+          </h2>
+          <h2 className="text-sm uppercase tracking-widest text-[var(--muted)]">
+            Thank You. Syndicate.
+          </h2>
+        </div>
+
+        <p className="blog-readable-copy">
+          I am truly grateful. My internship at Syndicate has been a highly rewarding experience; 
+          I’ve gained so much from my time here. The team members were incredibly kind to me, as was my boss. 
+          I am genuinely thankful for everything.
+        </p>
+      </section>
+
+      <section className="blog-readable-section space-y-5">
         <div className="border-b border-[var(--border)] pb-4">
           <h2 className="text-base font-semibold uppercase tracking-widest text-[var(--page-fg)]">
             {blogDates.macbookneo}
